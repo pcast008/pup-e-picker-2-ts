@@ -8,45 +8,10 @@
       "id": 0
     },
     {
-      "name": "Shana",
-      "image": "/assets/chihuahua.avif",
-      "description": "Missouri synergies Arizona Shoal Outdoors",
-      "isFavorite": true,
-      "id": 3
-    },
-    {
-      "name": "Koby",
-      "image": "/assets/corgi.png",
-      "description": "Implemented Darwin male Sedan Hybrid woman academic",
-      "isFavorite": true,
-      "id": 4
-    },
-    {
-      "name": "Declan",
-      "image": "/assets/corgi.png",
-      "description": "withdrawal navigate Benz solutions Automotive harness 1080p Chips",
-      "isFavorite": true,
-      "id": 5
-    },
-    {
-      "name": "Willy",
-      "image": "/assets/chihuahua.avif",
-      "description": "Seamless Product East Recycled Honda networks North Wooden",
-      "isFavorite": true,
-      "id": 6
-    },
-    {
-      "name": "Pat",
-      "image": "/assets/corgi.png",
-      "description": "East Salad pixel Johnson Specialist female Luxurious Intelligent",
-      "isFavorite": true,
-      "id": 7
-    },
-    {
       "name": "Lisette",
       "image": "/assets/corgi.png",
       "description": "indeed odit Vista Diesel sadly Nissan Toys short",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 8
     },
     {
@@ -60,14 +25,14 @@
       "name": "Elroy",
       "image": "/assets/corgi.png",
       "description": "Focused Games Dinar huzzah ouch",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 10
     },
     {
       "name": "Colton",
       "image": "/assets/blue-heeler.png",
       "description": "Garden Director incidentally woot didactic honk compressing Jordan",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 11
     },
     {
@@ -184,6 +149,20 @@
       "image": "/assets/blue-heeler.png",
       "favorite": false,
       "id": 34
+    },
+    {
+      "name": "dexter",
+      "description": "",
+      "image": "/assets/boxer.jpeg",
+      "favorite": false,
+      "id": 35
+    },
+    {
+      "name": "Benjamin",
+      "description": "yooooooooooooooo!!!",
+      "image": "/assets/dalmation.png",
+      "favorite": false,
+      "id": 36
     }
   ]
 }

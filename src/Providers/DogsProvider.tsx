@@ -8,7 +8,7 @@ type TDogsContext = {
   unfavoritedDogs: Dog[];
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
-  maxDogId: number;
+  //   maxDogId: number;
 };
 
 const DogsContext = createContext<TDogsContext>({} as TDogsContext);
@@ -18,7 +18,7 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const favoritedDogs = dogs.filter((dog) => dog.isFavorite);
   const unfavoritedDogs = dogs.filter((dog) => !dog.isFavorite);
-  const maxDogId = Math.max(...dogs.map((dog) => dog.id));
+  //   const maxDogId = Math.max(...dogs.map((dog) => dog.id));
 
   return (
     <DogsContext.Provider
@@ -29,7 +29,7 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
         unfavoritedDogs,
         isLoading,
         setIsLoading,
-        maxDogId,
+        // maxDogId,
       }}
     >
       {children}

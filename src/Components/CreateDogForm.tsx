@@ -9,7 +9,13 @@ export const CreateDogForm = () => {
   const [selectedImage, setSelectedImage] = useState(dogPictures.BlueHeeler);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const { setDogs, isLoading, setIsLoading, maxDogId, dogs } = useDogs();
+  const {
+    // setDogs,
+    isLoading,
+    setIsLoading,
+    // maxDogId,
+    // dogs
+  } = useDogs();
 
   const resetForm = () => {
     setName("");
@@ -25,16 +31,16 @@ export const CreateDogForm = () => {
         e.preventDefault();
         setIsLoading(true);
 
-        setDogs([
-          ...dogs,
-          {
-            id: maxDogId + 1,
-            name: name,
-            description: description,
-            image: selectedImage,
-            isFavorite: false,
-          },
-        ]);
+        // setDogs([
+        //   ...dogs,
+        //   {
+        //     id: maxDogId + 1,
+        //     name: name,
+        //     description: description,
+        //     image: selectedImage,
+        //     isFavorite: false,
+        //   },
+        // ]);
 
         Requests.postDog({
           name: name,
@@ -44,7 +50,7 @@ export const CreateDogForm = () => {
           .then((res) => {
             if (typeof res === "string") {
               toast.error(res);
-              setDogs(dogs);
+              //   setDogs(dogs);
             } else {
               toast.success("Dog created!");
             }
@@ -67,7 +73,7 @@ export const CreateDogForm = () => {
         disabled={isLoading}
         style={{
           opacity: isLoading ? 0.5 : 1,
-          cursor: isLoading ? "not-allowed" : "pointer",
+          cursor: isLoading ? "not-allowed" : "",
         }}
       />
       <label htmlFor="description">Dog Description</label>
@@ -83,7 +89,7 @@ export const CreateDogForm = () => {
         disabled={isLoading}
         style={{
           opacity: isLoading ? 0.5 : 1,
-          cursor: isLoading ? "not-allowed" : "pointer",
+          cursor: isLoading ? "not-allowed" : "",
         }}
       ></textarea>
       <label htmlFor="picture">Select an Image</label>
@@ -96,7 +102,7 @@ export const CreateDogForm = () => {
         disabled={isLoading}
         style={{
           opacity: isLoading ? 0.5 : 1,
-          cursor: isLoading ? "not-allowed" : "pointer",
+          cursor: isLoading ? "not-allowed" : "",
         }}
       >
         {Object.entries(dogPictures).map(([label, pictureValue]) => {

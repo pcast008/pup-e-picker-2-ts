@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { useActivePage } from "../Providers/ActivePageProvider";
+import { useDogs } from "../Providers/DogsProvider";
 
 export const Section = ({
   label,
@@ -8,6 +10,9 @@ export const Section = ({
   label: string;
   children: ReactNode;
 }) => {
+  const { activePage, setActivePage } = useActivePage();
+  const { favoritedDogs, unfavoritedDogs } = useDogs();
+
   return (
     <section id="main-section">
       <div className="container-header">
@@ -15,27 +20,38 @@ export const Section = ({
         <div className="selectors">
           {/* This should display the favorited count */}
           <div
-            className={`selector ${"active"}`}
+            className={`selector ${activePage === "favorites" ? "active" : ""}`}
             onClick={() => {
-              alert("click favorited");
+              //   alert("click favorited");
+              activePage === "favorites"
+                ? setActivePage("all")
+                : setActivePage("favorites");
             }}
           >
-            favorited ( {0} )
+            favorited ( {favoritedDogs.length} )
           </div>
 
           {/* This should display the unfavorited count */}
           <div
-            className={`selector ${""}`}
+            className={`selector ${
+              activePage === "unfavorites" ? "active" : ""
+            }`}
             onClick={() => {
-              alert("click unfavorited");
+              //   alert("click favorited");
+              activePage === "unfavorites"
+                ? setActivePage("all")
+                : setActivePage("unfavorites");
             }}
           >
-            unfavorited ( {10} )
+            unfavorited ( {unfavoritedDogs.length} )
           </div>
           <div
-            className={`selector ${""}`}
+            className={`selector ${activePage === "form" ? "active" : ""}`}
             onClick={() => {
-              alert("clicked create dog");
+              //   alert("click favorited");
+              activePage === "form"
+                ? setActivePage("all")
+                : setActivePage("form");
             }}
           >
             create dog

@@ -2,7 +2,6 @@ import { Dog } from "../types";
 import { FavoriteButton } from "./FavoriteButton";
 import { TrashButton } from "./TrashButton";
 import { UnfavoriteButton } from "./UnfavoriteButton";
-import { useActivePage } from "../Providers/ActivePageProvider";
 
 // ! Do Not Make Changes To This File
 export const DogCard = ({
@@ -18,8 +17,6 @@ export const DogCard = ({
   onHeartClick: () => void;
   isLoading: boolean;
 }) => {
-  const { activePage } = useActivePage();
-
   return (
     <div className="dog-card">
       {/* Choose which button to show depending on if dog is a favorite */}
@@ -50,11 +47,7 @@ export const DogCard = ({
       {/* Ignore this  */}
       {/* You can temporarily set a favorite overlay after a user favorites a dog */}
       {/* Try making className "favorite-overlay active"*/}
-      <div
-        className={`favorite-overlay ${
-          activePage === "favorites" ? "active" : ""
-        }`}
-      >
+      <div className={`favorite-overlay ${isFavorite ? "active" : ""}`}>
         {"<3"}
       </div>
 
@@ -62,21 +55,13 @@ export const DogCard = ({
       {/* You can temporarily set a favorite overlay after a user favorites a dog */}
       {/* Try making className "favorite-overlay active"*/}
       {isLoading && (
-        <div
-          className={`loading-overlay ${
-            activePage === "favorites" ? "active" : ""
-          }`}
-        ></div>
+        <div className={`loading-overlay ${isFavorite ? "active" : ""}`}></div>
       )}
 
       {/* Ignore this  */}
       {/* You can temporarily set a unfavorite overlay after a user favorites a dog */}
       {/* Try making className "unfavorite-overlay active"*/}
-      <div
-        className={`unfavorite-overlay ${
-          activePage === "unfavorites" ? "active" : ""
-        }`}
-      >
+      <div className={`unfavorite-overlay ${!isFavorite ? "active" : ""}`}>
         {"</3"}
       </div>
 

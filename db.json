@@ -4,7 +4,7 @@
       "name": "Clementina",
       "image": "/assets/blue-heeler.png",
       "description": "Bicycle neque Developer Consultant North",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 0
     },
     {

@@ -3,7 +3,6 @@ import { dogPictures } from "../dog-pictures";
 import { Requests } from "../api";
 import { toast } from "react-hot-toast";
 import { useDogs } from "../Providers/DogsProvider";
-import { set } from "zod";
 
 export const CreateDogForm = () => {
   // no props allowed

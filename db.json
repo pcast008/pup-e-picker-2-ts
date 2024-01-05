@@ -1,168 +1,109 @@
 {
   "dogs": [
     {
-      "name": "Clementina",
-      "image": "/assets/blue-heeler.png",
-      "description": "Bicycle neque Developer Consultant North",
+      "name": "Gerson",
+      "image": "/assets/cowardly.png",
+      "description": "Granite Intersex yawningly before Streamlined",
       "isFavorite": true,
       "id": 0
     },
     {
-      "name": "Lisette",
-      "image": "/assets/corgi.png",
-      "description": "indeed odit Vista Diesel sadly Nissan Toys short",
-      "isFavorite": false,
-      "id": 8
-    },
-    {
-      "name": "Marlee",
-      "image": "/assets/dalmation.png",
-      "description": "West Diesel generation Florida French",
-      "isFavorite": false,
-      "id": 9
-    },
-    {
-      "name": "Elroy",
-      "image": "/assets/corgi.png",
-      "description": "Focused Games Dinar huzzah ouch",
-      "isFavorite": false,
-      "id": 10
-    },
-    {
-      "name": "Colton",
-      "image": "/assets/blue-heeler.png",
-      "description": "Garden Director incidentally woot didactic honk compressing Jordan",
-      "isFavorite": false,
-      "id": 11
-    },
-    {
-      "name": "Verla",
-      "image": "/assets/boxer.png",
-      "description": "calculating distributed whereas Folding Rustic Liaison newton Trinity",
-      "isFavorite": true,
-      "id": 12
-    },
-    {
-      "name": "Leonora",
+      "name": "Janet",
       "image": "/assets/chihuahua.avif",
-      "description": "South Audi female Funk Plastic",
+      "description": "Praseodymium Land winding bludgeon quantifying Concrete male emulation",
       "isFavorite": false,
-      "id": 13
+      "id": 1
     },
     {
-      "name": "Aletha",
-      "image": "/assets/corgi.png",
-      "description": "Classical engineer aircraft Keyboard Ergonomic divan Generic",
+      "name": "Ona",
+      "image": "/assets/boxer.png",
+      "description": "connect Tandem except Granite explicabo virtual Chad",
+      "isFavorite": false,
+      "id": 2
+    },
+    {
+      "name": "Leopold",
+      "image": "/assets/dalmation.png",
+      "description": "turquoise maximize card enthusiastically Hybrid North Integration Peru",
       "isFavorite": false,
       "id": 14
     },
     {
-      "name": "Rickie",
+      "name": "Genevieve",
       "image": "/assets/corgi.png",
-      "description": "hmph Nevada loftily Bedfordshire Assurance Bespoke USB Elegant",
-      "isFavorite": true,
+      "description": "loosely Shilling Soft invoice Checking moderator Accountability Buckinghamshire",
+      "isFavorite": false,
       "id": 15
     },
     {
-      "name": "Joana",
-      "image": "/assets/dalmation.png",
-      "description": "Bhutan invoice Bicycle Diesel Cheese Bicycle given Berkshire",
+      "name": "Euna",
+      "image": "/assets/chihuahua.avif",
+      "description": "pixel Unbranded digital synthesize gladly compressing Mali invoice",
       "isFavorite": false,
       "id": 16
     },
     {
-      "name": "Kendra",
-      "image": "/assets/chihuahua.avif",
-      "description": "Soap Direct Gender violet runny Ferrari bluetooth",
+      "name": "Louisa",
+      "image": "/assets/blue-heeler.png",
+      "description": "Cyclocross Fluorine OCR but East cast Operations Coordinator",
       "isFavorite": false,
       "id": 17
     },
     {
-      "name": "Destini",
-      "image": "/assets/chihuahua.avif",
-      "description": "Indiana reboot Borders Forward Van violet Advanced",
-      "isFavorite": true,
+      "name": "Salvatore",
+      "image": "/assets/dalmation.png",
+      "description": "male briefly Music Elegant Ytterbium",
+      "isFavorite": false,
       "id": 18
     },
     {
-      "name": "Donnell",
-      "image": "/assets/boxer.png",
-      "description": "Livermorium occaecati quantifying pottery Chips",
+      "name": "Felix",
+      "image": "/assets/blue-heeler.png",
+      "description": "North Gorgeous leverage East algorithm infrastructures Toy searchingly",
       "isFavorite": true,
       "id": 19
     },
     {
-      "name": "Robinhood",
-      "description": "hello there",
-      "image": "/assets/corgi.png",
-      "favorite": false,
+      "name": "Milo",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": true,
       "id": 20
     },
     {
-      "name": "Dexter",
+      "name": "asdasd",
       "description": "",
-      "image": "/assets/dalmation.png",
-      "favorite": false,
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
       "id": 21
     },
     {
-      "name": "Peter C",
+      "name": "asdasdasd",
       "description": "",
-      "image": "/assets/cowardly.png",
-      "favorite": false,
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
       "id": 22
     },
     {
-      "name": "",
+      "name": "sdfsdfsdf",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "favorite": false,
-      "id": 27,
-      "isFavorite": true
+      "isFavorite": false,
+      "id": 23
     },
     {
-      "name": "",
+      "name": "sdfsdfsdf",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "favorite": false,
-      "id": 28,
-      "isFavorite": true
-    },
-    {
-      "name": "",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "favorite": false,
-      "id": 30,
-      "isFavorite": true
+      "isFavorite": false,
+      "id": 24
     },
     {
       "name": "",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "favorite": false,
-      "id": 33
-    },
-    {
-      "name": "",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "favorite": false,
-      "id": 34
-    },
-    {
-      "name": "dexter",
-      "description": "",
-      "image": "/assets/boxer.jpeg",
-      "favorite": false,
-      "id": 35
-    },
-    {
-      "name": "Benjamin",
-      "description": "yooooooooooooooo!!!",
-      "image": "/assets/dalmation.png",
-      "favorite": false,
-      "id": 36
+      "isFavorite": false,
+      "id": 25
     }
   ]
 }

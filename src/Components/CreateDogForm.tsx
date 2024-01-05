@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
-import { Requests } from "../api";
-import { toast } from "react-hot-toast";
 import { useDogs } from "../Providers/DogsProvider";
 
 export const CreateDogForm = () => {
@@ -9,13 +7,8 @@ export const CreateDogForm = () => {
   const [selectedImage, setSelectedImage] = useState(dogPictures.BlueHeeler);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const {
-    // setDogs,
-    isLoading,
-    setIsLoading,
-    // maxDogId,
-    // dogs
-  } = useDogs();
+
+  const { isLoading, createDog, createDogFetch } = useDogs();
 
   const resetForm = () => {
     setName("");
@@ -29,36 +22,8 @@ export const CreateDogForm = () => {
       id="create-dog-form"
       onSubmit={(e) => {
         e.preventDefault();
-        setIsLoading(true);
-
-        // setDogs([
-        //   ...dogs,
-        //   {
-        //     id: maxDogId + 1,
-        //     name: name,
-        //     description: description,
-        //     image: selectedImage,
-        //     isFavorite: false,
-        //   },
-        // ]);
-
-        Requests.postDog({
-          name: name,
-          description: description,
-          image: selectedImage,
-        })
-          .then((res) => {
-            if (typeof res === "string") {
-              toast.error(res);
-              //   setDogs(dogs);
-            } else {
-              toast.success("Dog created!");
-            }
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-
+        createDog({ name, description, image: selectedImage });
+        createDogFetch({ name, description, image: selectedImage });
         resetForm();
       }}
     >

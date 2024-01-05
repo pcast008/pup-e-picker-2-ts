@@ -27,7 +27,7 @@ const postDog = (dog: CreateDog) => {
       name: dog.name,
       description: dog.description,
       image: dog.image,
-      favorite: false,
+      isFavorite: false,
     }),
   })
     .then((response) => {

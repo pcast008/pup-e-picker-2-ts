@@ -15,3 +15,5 @@ export type CreateDog = {
   image: string;
   description: string;
 };
+
+export type ActivePage = "all" | "favorites" | "unfavorites" | "form";

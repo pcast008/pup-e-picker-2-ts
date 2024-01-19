@@ -10,10 +10,6 @@ export const dogSchema = z.object({
 
 export type Dog = z.infer<typeof dogSchema>;
 
-export type CreateDog = {
-  name: string;
-  image: string;
-  description: string;
-};
+export type CreateDogDTO = Omit<Dog, "id" | "isFavorite">;
 
 export type ActivePage = "all" | "favorites" | "unfavorites" | "form";

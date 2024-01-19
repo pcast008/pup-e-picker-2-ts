@@ -4,16 +4,12 @@ const URL = "http://localhost:3000";
 
 const getAllDogs = () => {
   // fill out method
-  return fetch(`${URL}/dogs`)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
+  return fetch(`${URL}/dogs`).then((res) => {
+    if (!res.ok) {
       throw new Error("Error getting dogs.");
-    })
-    .catch((error) => {
-      return error.message;
-    });
+    }
+    return res.json();
+  });
 };
 
 const postDog = (dog: CreateDog) => {
@@ -29,31 +25,23 @@ const postDog = (dog: CreateDog) => {
       image: dog.image,
       isFavorite: false,
     }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error("Error posting dog.");
-    })
-    .catch((error) => {
-      return error.message;
-    });
+  }).then((res) => {
+    if (!res.ok) {
+      throw new Error("Error creating dog.");
+    }
+    return res;
+  });
 };
 const deleteDogRequest = (id: number) => {
   // fill out method
   return fetch(`${URL}/dogs/${id}`, {
     method: "DELETE",
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
+  }).then((res) => {
+    if (!res.ok) {
       throw new Error("Error deleting dog.");
-    })
-    .catch((error) => {
-      return error.message;
-    });
+    }
+    return res;
+  });
 };
 
 const patchFavoriteForDog = (id: number, isFavorite: boolean) => {
@@ -66,17 +54,12 @@ const patchFavoriteForDog = (id: number, isFavorite: boolean) => {
     body: JSON.stringify({
       isFavorite: isFavorite,
     }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Error updating dog.");
-      }
-    })
-    .catch((error) => {
-      return error.message;
-    });
+  }).then((res) => {
+    if (!res.ok) {
+      throw new Error("Error updating dog.");
+    }
+    return res;
+  });
 };
 
 export const Requests = {

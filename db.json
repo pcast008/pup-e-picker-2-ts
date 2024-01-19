@@ -1,60 +1,11 @@
 {
   "dogs": [
     {
-      "name": "Gerson",
-      "image": "/assets/cowardly.png",
-      "description": "Granite Intersex yawningly before Streamlined",
-      "isFavorite": true,
-      "id": 0
-    },
-    {
       "name": "Janet",
       "image": "/assets/chihuahua.avif",
       "description": "Praseodymium Land winding bludgeon quantifying Concrete male emulation",
       "isFavorite": false,
       "id": 1
-    },
-    {
-      "name": "Ona",
-      "image": "/assets/boxer.png",
-      "description": "connect Tandem except Granite explicabo virtual Chad",
-      "isFavorite": false,
-      "id": 2
-    },
-    {
-      "name": "Leopold",
-      "image": "/assets/dalmation.png",
-      "description": "turquoise maximize card enthusiastically Hybrid North Integration Peru",
-      "isFavorite": false,
-      "id": 14
-    },
-    {
-      "name": "Genevieve",
-      "image": "/assets/corgi.png",
-      "description": "loosely Shilling Soft invoice Checking moderator Accountability Buckinghamshire",
-      "isFavorite": false,
-      "id": 15
-    },
-    {
-      "name": "Euna",
-      "image": "/assets/chihuahua.avif",
-      "description": "pixel Unbranded digital synthesize gladly compressing Mali invoice",
-      "isFavorite": false,
-      "id": 16
-    },
-    {
-      "name": "Louisa",
-      "image": "/assets/blue-heeler.png",
-      "description": "Cyclocross Fluorine OCR but East cast Operations Coordinator",
-      "isFavorite": false,
-      "id": 17
-    },
-    {
-      "name": "Salvatore",
-      "image": "/assets/dalmation.png",
-      "description": "male briefly Music Elegant Ytterbium",
-      "isFavorite": false,
-      "id": 18
     },
     {
       "name": "Felix",
@@ -74,14 +25,14 @@
       "name": "asdasd",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 21
     },
     {
       "name": "asdasdasd",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 22
     },
     {
@@ -95,15 +46,71 @@
       "name": "sdfsdfsdf",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 24
     },
     {
       "name": "",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 25
+    },
+    {
+      "name": "sadfsdfsdf",
+      "description": "sdfsdf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": true,
+      "id": 26
+    },
+    {
+      "name": "sadfdsfsdf",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": true,
+      "id": 27
+    },
+    {
+      "name": "sdfsdfsd",
+      "description": "sdfsdf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": true,
+      "id": 28
+    },
+    {
+      "name": "dsfds",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 29
+    },
+    {
+      "name": "sdfsdfsdf",
+      "description": "sdfsdfs",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 31
+    },
+    {
+      "name": "dfgdfgdfgdfg",
+      "description": "dfgdfgdfg",
+      "image": "/assets/cowardly.png",
+      "isFavorite": false,
+      "id": 32
+    },
+    {
+      "name": "hgfhgfhfgh",
+      "description": "fghfghfghfgh",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 33
+    },
+    {
+      "name": "sdfsdfsd",
+      "description": "fsdfsdf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 34
     }
   ]
 }

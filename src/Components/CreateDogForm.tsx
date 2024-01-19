@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { useDogs } from "../Providers/DogsProvider";
+import { toast } from "react-hot-toast";
 
 export const CreateDogForm = () => {
   // no props allowed
@@ -8,7 +9,7 @@ export const CreateDogForm = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
-  const { isLoading, createDog, createDogFetch } = useDogs();
+  const { isLoading, createDog, createDogFetch, setDogs, dogs } = useDogs();
 
   const resetForm = () => {
     setName("");
@@ -23,8 +24,16 @@ export const CreateDogForm = () => {
       onSubmit={(e) => {
         e.preventDefault();
         createDog({ name, description, image: selectedImage });
-        createDogFetch({ name, description, image: selectedImage });
-        resetForm();
+        createDogFetch({ name, description, image: selectedImage })
+          .then(() => {
+            // console.log("resetting form");
+            resetForm();
+          })
+          .catch(() => {
+            // console.log("dog failed to create");
+            toast.error("Error creating dog.");
+            setDogs(dogs);
+          });
       }}
     >
       <h4>Create a New Dog</h4>

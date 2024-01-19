@@ -1,5 +1,5 @@
 import { ReactNode, useState, createContext, useContext } from "react";
-import { Dog, CreateDog } from "../types";
+import { Dog, CreateDogDTO } from "../types";
 import { Requests } from "../api";
 import toast from "react-hot-toast";
 
@@ -10,13 +10,13 @@ type TDogsContext = {
   unfavoritedDogs: Dog[];
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
-  createDog: (newDog: CreateDog) => void;
+  createDog: (dog: CreateDogDTO) => void;
   deleteDog: (id: number) => void;
   updateDog: (id: number, isFavorite: boolean) => void;
-  refetchDogs: () => void;
-  deleteDogFetch: (id: number) => void;
-  updateDogFetch: (id: number, isFavorite: boolean) => void;
-  createDogFetch: (newDog: CreateDog) => void;
+  refetchDogs: () => Promise<unknown>;
+  deleteDogFetch: (id: number) => Promise<unknown>;
+  updateDogFetch: (id: number, isFavorite: boolean) => Promise<unknown>;
+  createDogFetch: (dog: CreateDogDTO) => Promise<unknown>;
 };
 
 const DogsContext = createContext<TDogsContext>({} as TDogsContext);
@@ -29,10 +29,10 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
   const unfavoritedDogs = dogs.filter((dog) => !dog.isFavorite);
   const maxDogId = Math.max(...dogs.map((dog) => dog.id));
 
-  const createDog = (newDog: CreateDog) => {
+  const createDog = (dog: CreateDogDTO) => {
     const newDogs: Dog[] = [
       ...dogs,
-      { ...newDog, id: maxDogId + 1, isFavorite: false },
+      { ...dog, id: maxDogId + 1, isFavorite: false },
     ];
     setDogs(newDogs);
   };
@@ -43,74 +43,52 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
 
   const updateDog = (id: number, isFavorite: boolean) => {
     setDogs(
-      dogs.map((dogg) => {
-        if (dogg.id === id) {
-          return {
-            ...dogg,
-            isFavorite,
-          };
-        } else {
-          return dogg;
-        }
-      })
+      dogs.map((dog) =>
+        dog.id === id
+          ? {
+              ...dog,
+              isFavorite,
+            }
+          : dog
+      )
     );
   };
 
   const deleteDogFetch = (id: number) => {
-    // setIsLoading(true);
-    Requests.deleteDogRequest(id).then((res) => {
-      if (typeof res === "string") {
-        toast.error(res);
-        setDogs(dogs);
-      } else {
-        return;
-      }
+    return Requests.deleteDogRequest(id).catch(() => {
+      toast.error("Error deleting dog.");
+      setDogs(dogs);
     });
-    //   .finally(() => {
-    //     setIsLoading(false);
-    //   });
   };
 
   const updateDogFetch = (id: number, isFavorite: boolean) => {
-    // setIsLoading(true);
-    Requests.patchFavoriteForDog(id, isFavorite).then((res) => {
-      if (typeof res === "string") {
-        toast.error(res);
-        setDogs(dogs);
-      } else {
-        return;
-      }
+    return Requests.patchFavoriteForDog(id, isFavorite).catch(() => {
+      toast.error("Error updating dog.");
+      setDogs(dogs);
     });
-    //   .finally(() => {
-    //     setIsLoading(false);
-    //   });
   };
 
   const refetchDogs = () => {
     setIsLoading(true);
-    Requests.getAllDogs()
+    return Requests.getAllDogs()
       .then((res) => {
-        if (typeof res === "string") {
-          toast.error(res);
-        } else {
-          setDogs(res);
-        }
+        setDogs(res);
+      })
+      .catch(() => {
+        toast.error("Error getting dogs.");
       })
       .finally(() => {
         setIsLoading(false);
       });
   };
 
-  const createDogFetch = (newDog: CreateDog) => {
+  const createDogFetch = (dog: CreateDogDTO) => {
     setIsLoading(true);
-    Requests.postDog(newDog)
+    return Requests.postDog(dog)
       .then((res) => {
-        if (typeof res === "string") {
-          toast.error(res);
-          setDogs(dogs);
-        } else {
-          toast.success("Dog Created!");
-        }
+        // console.log("dog created");
+        toast.success("Dog created!");
+        return res;
       })
       .finally(() => {
         setIsLoading(false);

@@ -3,11 +3,9 @@ import { CreateDogForm } from "./Components/CreateDogForm";
 import { Dogs } from "./Components/Dogs";
 import { useEffect } from "react";
 import { useDogs } from "./Providers/DogsProvider";
-import { useActivePage } from "./Providers/ActivePageProvider";
 
 export function App() {
-  const { refetchDogs } = useDogs();
-  const { activePage } = useActivePage();
+  const { refetchDogs, activePage } = useDogs();
 
   useEffect(() => {
     refetchDogs();

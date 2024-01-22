@@ -9,7 +9,7 @@ export const CreateDogForm = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
-  const { isLoading, createDog, createDogFetch, setDogs, dogs } = useDogs();
+  const { isLoading, createDog, setIsLoading } = useDogs();
 
   const resetForm = () => {
     setName("");
@@ -23,16 +23,18 @@ export const CreateDogForm = () => {
       id="create-dog-form"
       onSubmit={(e) => {
         e.preventDefault();
-        createDog({ name, description, image: selectedImage });
-        createDogFetch({ name, description, image: selectedImage })
+        createDog({ name, description, image: selectedImage })
           .then(() => {
             // console.log("resetting form");
             resetForm();
           })
           .catch(() => {
-            // console.log("dog failed to create");
+            // console.log("dog failed to create2");
             toast.error("Error creating dog.");
-            setDogs(dogs);
+          })
+          .finally(() => {
+            // console.log("finally");
+            setIsLoading(false);
           });
       }}
     >

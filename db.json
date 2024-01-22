@@ -15,59 +15,31 @@
       "id": 19
     },
     {
-      "name": "Milo",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 20
-    },
-    {
-      "name": "asdasd",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 21
-    },
-    {
-      "name": "asdasdasd",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 22
-    },
-    {
       "name": "sdfsdfsdf",
       "description": "",
       "image": "/assets/blue-heeler.png",
       "isFavorite": false,
-      "id": 23
-    },
-    {
-      "name": "sdfsdfsdf",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
       "id": 24
     },
     {
       "name": "",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 25
     },
     {
       "name": "sadfsdfsdf",
       "description": "sdfsdf",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 26
     },
     {
       "name": "sadfdsfsdf",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 27
     },
     {
@@ -81,36 +53,113 @@
       "name": "dsfds",
       "description": "",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 29
     },
     {
       "name": "sdfsdfsdf",
       "description": "sdfsdfs",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 31
     },
     {
       "name": "dfgdfgdfgdfg",
       "description": "dfgdfgdfg",
       "image": "/assets/cowardly.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 32
     },
     {
       "name": "hgfhgfhfgh",
       "description": "fghfghfghfgh",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 33
     },
     {
       "name": "sdfsdfsd",
       "description": "fsdfsdf",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 34
+    },
+    {
+      "name": "dsrgfrsedgdfg",
+      "description": "dfgdfg",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": true,
+      "id": 35
+    },
+    {
+      "name": "sdfsdfsdf",
+      "description": "sdfdsfs",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 36
+    },
+    {
+      "name": "sdfdsf",
+      "description": "dsfsdfdsf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 37
+    },
+    {
+      "name": "dfgdfg",
+      "description": "dfgdfg",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 38
+    },
+    {
+      "name": "dfgfdgdfg",
+      "description": "dfgdfgd",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 39
+    },
+    {
+      "name": "dfgdfgdfg",
+      "description": "dfgdfgdfgdfg",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 40
+    },
+    {
+      "name": "sdfdsfsdf",
+      "description": "sdfsdfs",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 41
+    },
+    {
+      "name": "sdfsdfsd",
+      "description": "sdffsdfsdf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 42
+    },
+    {
+      "name": "sdgdsgf",
+      "description": "sdgfsdf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 43
+    },
+    {
+      "name": "sfdsf",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 44
+    },
+    {
+      "name": "ROBIN",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 45
     }
   ]
 }

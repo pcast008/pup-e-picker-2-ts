@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { useActivePage } from "../Providers/ActivePageProvider";
 import { useDogs } from "../Providers/DogsProvider";
 
 export const Section = ({
@@ -10,8 +9,8 @@ export const Section = ({
   label: string;
   children: ReactNode;
 }) => {
-  const { activePage, setActivePage } = useActivePage();
-  const { favoritedDogs, unfavoritedDogs } = useDogs();
+  const { favoritedDogs, unfavoritedDogs, activePage, setActivePage } =
+    useDogs();
 
   return (
     <section id="main-section">

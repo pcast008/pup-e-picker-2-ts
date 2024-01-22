@@ -1,5 +1,5 @@
 import { ReactNode, useState, createContext, useContext } from "react";
-import { Dog, CreateDogDTO } from "../types";
+import { Dog, CreateDogDTO, ActivePage } from "../types";
 import { Requests } from "../api";
 import toast from "react-hot-toast";
 
@@ -10,13 +10,13 @@ type TDogsContext = {
   unfavoritedDogs: Dog[];
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
-  createDog: (dog: CreateDogDTO) => void;
-  deleteDog: (id: number) => void;
-  updateDog: (id: number, isFavorite: boolean) => void;
+  createDog: (dog: CreateDogDTO) => Promise<unknown>;
+  deleteDog: (id: number) => Promise<unknown>;
+  updateDog: (id: number, isFavorite: boolean) => Promise<unknown>;
   refetchDogs: () => Promise<unknown>;
-  deleteDogFetch: (id: number) => Promise<unknown>;
-  updateDogFetch: (id: number, isFavorite: boolean) => Promise<unknown>;
-  createDogFetch: (dog: CreateDogDTO) => Promise<unknown>;
+  activePage: ActivePage;
+  setActivePage: (activePage: ActivePage) => void;
+  renderedDogs: () => Dog[];
 };
 
 const DogsContext = createContext<TDogsContext>({} as TDogsContext);
@@ -24,21 +24,50 @@ const DogsContext = createContext<TDogsContext>({} as TDogsContext);
 export const DogsProvider = ({ children }: { children: ReactNode }) => {
   const [dogs, setDogs] = useState<Dog[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [activePage, setActivePage] = useState<ActivePage>("all");
 
   const favoritedDogs = dogs.filter((dog) => dog.isFavorite);
   const unfavoritedDogs = dogs.filter((dog) => !dog.isFavorite);
-  const maxDogId = Math.max(...dogs.map((dog) => dog.id));
+
+  const renderedDogs = (): Dog[] => {
+    switch (activePage) {
+      case "favorites":
+        return favoritedDogs;
+      case "unfavorites":
+        return unfavoritedDogs;
+      default:
+        return dogs;
+    }
+  };
 
   const createDog = (dog: CreateDogDTO) => {
-    const newDogs: Dog[] = [
-      ...dogs,
-      { ...dog, id: maxDogId + 1, isFavorite: false },
-    ];
-    setDogs(newDogs);
+    setIsLoading(true);
+    return Requests.postDog(dog).then((res) => {
+      //   console.log("dog created");
+      toast.success("Dog created!");
+      refetchDogs();
+      return res;
+    });
+    //   .catch(() => {
+    //     throw new Error("Error creating dog.");
+    //     console.log("dog failed to create1");
+    //   })
+
+    // Jon - .finally was moved to the CreateDogForm for better logic flow
+    // (remember what we went over in the class?)
+
+    // .finally(() => {
+    //   console.log("finally");
+    //   setIsLoading(false);
+    // })
   };
 
   const deleteDog = (id: number) => {
     setDogs(dogs.filter((dog) => dog.id !== id));
+    return Requests.deleteDogRequest(id).catch(() => {
+      toast.error("Error deleting dog.");
+      setDogs(dogs);
+    });
   };
 
   const updateDog = (id: number, isFavorite: boolean) => {
@@ -52,16 +81,6 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
           : dog
       )
     );
-  };
-
-  const deleteDogFetch = (id: number) => {
-    return Requests.deleteDogRequest(id).catch(() => {
-      toast.error("Error deleting dog.");
-      setDogs(dogs);
-    });
-  };
-
-  const updateDogFetch = (id: number, isFavorite: boolean) => {
     return Requests.patchFavoriteForDog(id, isFavorite).catch(() => {
       toast.error("Error updating dog.");
       setDogs(dogs);
@@ -82,19 +101,6 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
       });
   };
 
-  const createDogFetch = (dog: CreateDogDTO) => {
-    setIsLoading(true);
-    return Requests.postDog(dog)
-      .then((res) => {
-        // console.log("dog created");
-        toast.success("Dog created!");
-        return res;
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
-
   return (
     <DogsContext.Provider
       value={{
@@ -107,10 +113,10 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
         createDog,
         deleteDog,
         updateDog,
-        deleteDogFetch,
         refetchDogs,
-        updateDogFetch,
-        createDogFetch,
+        activePage,
+        setActivePage,
+        renderedDogs,
       }}
     >
       {children}

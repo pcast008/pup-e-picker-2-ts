@@ -1,19 +1,21 @@
-import { CreateDog } from "./types";
+import { CreateDogDTO } from "./types";
 
 const URL = "http://localhost:3000";
 
-const getAllDogs = () => {
-  // fill out method
-  return fetch(`${URL}/dogs`).then((res) => {
-    if (!res.ok) {
-      throw new Error("Error getting dogs.");
-    }
-    return res.json();
-  });
+const throwIfNotOkOrParse = (message: string) => (res: Response) => {
+  if (!res.ok) {
+    throw new Error(message);
+  }
+  return res;
 };
 
-const postDog = (dog: CreateDog) => {
-  // fill out method
+const getAllDogs = () => {
+  return fetch(`${URL}/dogs`)
+    .then(throwIfNotOkOrParse("Error getting dogs."))
+    .then((res) => res.json());
+};
+
+const postDog = (dog: CreateDogDTO) => {
   return fetch(`${URL}/dogs`, {
     method: "POST",
     headers: {
@@ -25,27 +27,16 @@ const postDog = (dog: CreateDog) => {
       image: dog.image,
       isFavorite: false,
     }),
-  }).then((res) => {
-    if (!res.ok) {
-      throw new Error("Error creating dog.");
-    }
-    return res;
-  });
+  }).then(throwIfNotOkOrParse("Error creating dog."));
 };
+
 const deleteDogRequest = (id: number) => {
-  // fill out method
   return fetch(`${URL}/dogs/${id}`, {
     method: "DELETE",
-  }).then((res) => {
-    if (!res.ok) {
-      throw new Error("Error deleting dog.");
-    }
-    return res;
-  });
+  }).then(throwIfNotOkOrParse("Error deleting dog."));
 };
 
 const patchFavoriteForDog = (id: number, isFavorite: boolean) => {
-  // fill out method
   return fetch(`${URL}/dogs/${id}`, {
     method: "PATCH",
     headers: {
@@ -54,12 +45,7 @@ const patchFavoriteForDog = (id: number, isFavorite: boolean) => {
     body: JSON.stringify({
       isFavorite: isFavorite,
     }),
-  }).then((res) => {
-    if (!res.ok) {
-      throw new Error("Error updating dog.");
-    }
-    return res;
-  });
+  }).then(throwIfNotOkOrParse("Error updating dog."));
 };
 
 export const Requests = {

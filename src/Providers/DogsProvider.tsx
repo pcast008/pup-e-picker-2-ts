@@ -1,4 +1,10 @@
-import { ReactNode, useState, createContext, useContext } from "react";
+import {
+  ReactNode,
+  useState,
+  createContext,
+  useContext,
+  useEffect,
+} from "react";
 import { Dog, CreateDogDTO, ActivePage } from "../types";
 import { Requests } from "../api";
 import toast from "react-hot-toast";
@@ -100,6 +106,10 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
         setIsLoading(false);
       });
   };
+
+  useEffect(() => {
+    refetchDogs();
+  }, []);
 
   return (
     <DogsContext.Provider

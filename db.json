@@ -8,55 +8,6 @@
       "id": 1
     },
     {
-      "name": "Felix",
-      "image": "/assets/blue-heeler.png",
-      "description": "North Gorgeous leverage East algorithm infrastructures Toy searchingly",
-      "isFavorite": true,
-      "id": 19
-    },
-    {
-      "name": "sdfsdfsdf",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 24
-    },
-    {
-      "name": "",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 25
-    },
-    {
-      "name": "sadfsdfsdf",
-      "description": "sdfsdf",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 26
-    },
-    {
-      "name": "sadfdsfsdf",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 27
-    },
-    {
-      "name": "sdfsdfsd",
-      "description": "sdfsdf",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 28
-    },
-    {
-      "name": "dsfds",
-      "description": "",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 29
-    },
-    {
       "name": "sdfsdfsdf",
       "description": "sdfsdfs",
       "image": "/assets/blue-heeler.png",
@@ -67,22 +18,15 @@
       "name": "dfgdfgdfgdfg",
       "description": "dfgdfgdfg",
       "image": "/assets/cowardly.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 32
     },
     {
       "name": "hgfhgfhfgh",
       "description": "fghfghfghfgh",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 33
-    },
-    {
-      "name": "sdfsdfsd",
-      "description": "fsdfsdf",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 34
     },
     {
       "name": "dsrgfrsedgdfg",
@@ -160,6 +104,20 @@
       "image": "/assets/blue-heeler.png",
       "isFavorite": false,
       "id": 45
+    },
+    {
+      "name": "rthftgrhfg",
+      "description": "hgfhf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 46
+    },
+    {
+      "name": "sdfdsfds",
+      "description": "fdsfsdf",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 47
     }
   ]
 }

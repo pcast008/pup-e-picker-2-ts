@@ -1,15 +1,10 @@
 import { Section } from "./Components/Section";
 import { CreateDogForm } from "./Components/CreateDogForm";
 import { Dogs } from "./Components/Dogs";
-import { useEffect } from "react";
 import { useDogs } from "./Providers/DogsProvider";
 
 export function App() {
-  const { refetchDogs, activePage } = useDogs();
-
-  useEffect(() => {
-    refetchDogs();
-  }, []);
+  const { activePage } = useDogs();
 
   return (
     <div className="App" style={{ backgroundColor: "skyblue" }}>
